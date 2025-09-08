@@ -22,3 +22,55 @@ $result = timeConversion($s);
 fwrite($fptr, $result . "\n");
 
 fclose($fptr);
+
+
+
+m - статистика
+n - пользователи
+function getStatistic($statics)
+{
+    $stepsByUser = [];
+    $daysByUser = [];
+    $maxStep = 0;
+    $maxDays = 0;
+
+    foreach ($statics as $static) {
+
+        $userId = $static['userId'];
+        $userSteps = $static['userSteps'];
+
+        if (!isset($stepsByUser[$userId])) {
+            $stepsByUser[$userId] = 0;
+        }
+
+        if (!isset($stepsByUser[$userId])) {
+            $daysByUser[$userId] = 0;
+        }
+
+        $daysByUser[$userId]++;
+        $stepsByUser[$userId] += $userSteps;
+
+        if ($maxDays < $daysByUser[$userId]) {
+            $maxDays = $daysByUser[$userId];
+        }
+
+        if ($maxStep < $stepsByUser[$userId]) {
+            $maxStep = $stepsByUser[$userId];
+        }
+    }
+
+
+    $userIdsWithMaxDays = array_filter($daysByUser, static function ($day) use ($maxDays) {
+        return $day === $maxDays;
+    });
+
+
+    foreach ($userSteps as $userId) {}
+    $userAllDaysWithSteps = array_intersect()
+
+
+
+
+
+
+}
