@@ -24,9 +24,6 @@ fwrite($fptr, $result . "\n");
 fclose($fptr);
 
 
-
-m - статистика
-n - пользователи
 function getStatistic($statics)
 {
     $stepsByUser = [];
@@ -66,7 +63,6 @@ function getStatistic($statics)
 
 
     foreach ($userSteps as $userId) {}
-    $userAllDaysWithSteps = array_intersect()
 
 
 
